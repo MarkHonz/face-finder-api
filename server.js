@@ -51,6 +51,6 @@ app.post('/imageurl', (req, res) => {
 	image.handleApiCall(req, res);
 });
 
-app.listen(3009, () => {
-	console.log('Express Server listening to port:3009');
+app.listen(process.env.PORT || 3009, () => {
+	console.log(`Express Server listening to port:${process.env.PORT}`);
 });
