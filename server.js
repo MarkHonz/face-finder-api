@@ -5,11 +5,8 @@ const cors = require('cors');
 const db = require('knex')({
 	client: 'pg',
 	connection: {
-		host: `postgresql-curly-50512`,
-		port: 5432,
-		user: 'postgres',
-		password: '',
-		database: 'face-finder',
+		host: process.env.DATABASE_URL,
+		ssl: true,
 	},
 });
 const register = require('./controllers/register');
